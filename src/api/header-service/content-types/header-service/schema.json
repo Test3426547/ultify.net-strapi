@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "header_services",
+  "info": {
+    "singularName": "header-service",
+    "pluralName": "header-services",
+    "displayName": "HeaderService",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "text"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "text"
+    },
+    "Pills": {
+      "displayName": "Pills",
+      "type": "component",
+      "repeatable": true,
+      "component": "pills.pills",
+      "max": 6
+    }
+  }
+}

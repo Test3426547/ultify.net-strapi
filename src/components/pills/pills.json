@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_pills_pills",
+  "info": {
+    "displayName": "Pills",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    }
+  }
+}

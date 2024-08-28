@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_links_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Pill_text": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}
