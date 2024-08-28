@@ -23,13 +23,6 @@
     },
     "Subheading": {
       "type": "text"
-    },
-    "Pills": {
-      "displayName": "Pills",
-      "type": "component",
-      "repeatable": true,
-      "component": "pills.pills",
-      "max": 6
     }
   }
 }

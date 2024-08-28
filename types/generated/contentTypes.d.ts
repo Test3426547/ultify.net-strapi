@@ -378,13 +378,6 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
     Subtitle: Attribute.Text;
     Heading: Attribute.String;
     Subheading: Attribute.Text;
-    Pill: Attribute.Component<'links.links', true> &
-      Attribute.SetMinMax<
-        {
-          max: 6;
-        },
-        number
-      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -419,13 +412,6 @@ export interface ApiHeaderServiceHeaderService extends Schema.CollectionType {
     Subtitle: Attribute.Text;
     Heading: Attribute.String;
     Subheading: Attribute.Text;
-    Pills: Attribute.Component<'pills.pills', true> &
-      Attribute.SetMinMax<
-        {
-          max: 6;
-        },
-        number
-      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -23,13 +23,6 @@
     },
     "Subheading": {
       "type": "text"
-    },
-    "Pill": {
-      "displayName": "Links",
-      "type": "component",
-      "repeatable": true,
-      "component": "links.links",
-      "max": 6
     }
   }
 }
