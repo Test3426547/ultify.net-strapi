@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guarantees",
+  "info": {
+    "singularName": "guarantee",
+    "pluralName": "guarantees",
+    "displayName": "Guarantee"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Heading1": {
+      "type": "string"
+    },
+    "Body1": {
+      "type": "text"
+    },
+    "Heading2": {
+      "type": "string"
+    },
+    "Body2": {
+      "type": "text"
+    },
+    "Heading3": {
+      "type": "string"
+    },
+    "Body3": {
+      "type": "text"
+    }
+  }
+}

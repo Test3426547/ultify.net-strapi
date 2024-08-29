@@ -1,0 +1,117 @@
+{
+  "kind": "collectionType",
+  "collectionName": "our_services",
+  "info": {
+    "singularName": "our-service",
+    "pluralName": "our-services",
+    "displayName": "OurService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "text"
+    },
+    "Service1": {
+      "type": "string"
+    },
+    "Description1": {
+      "type": "text"
+    },
+    "Media1": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Service2": {
+      "type": "string"
+    },
+    "Description2": {
+      "type": "text"
+    },
+    "Media2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Service3": {
+      "type": "string"
+    },
+    "Description3": {
+      "type": "text"
+    },
+    "Media3": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Service4": {
+      "type": "string"
+    },
+    "Description4": {
+      "type": "text"
+    },
+    "Media4": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Service5": {
+      "type": "string"
+    },
+    "Description5": {
+      "type": "text"
+    },
+    "Media5": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Service6": {
+      "type": "string"
+    },
+    "Description6": {
+      "type": "text"
+    },
+    "Media6": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -362,74 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHeaderHeader extends Schema.CollectionType {
-  collectionName: 'headers';
-  info: {
-    singularName: 'header';
-    pluralName: 'headers';
-    displayName: 'Header';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Subtitle: Attribute.Text;
-    Heading: Attribute.String;
-    Subheading: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::header.header',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::header.header',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHeaderServiceHeaderService extends Schema.CollectionType {
-  collectionName: 'header_services';
-  info: {
-    singularName: 'header-service';
-    pluralName: 'header-services';
-    displayName: 'HeaderService';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Subtitle: Attribute.Text;
-    Heading: Attribute.String;
-    Subheading: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::header-service.header-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::header-service.header-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -856,6 +788,426 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutUsDetailAboutUsDetail extends Schema.CollectionType {
+  collectionName: 'about_us_details';
+  info: {
+    singularName: 'about-us-detail';
+    pluralName: 'about-us-details';
+    displayName: 'AboutUsDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    N1: Attribute.Integer;
+    Heading1: Attribute.String;
+    Body1: Attribute.Text;
+    Image1: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    N2: Attribute.Integer;
+    Heading2: Attribute.String;
+    Body2: Attribute.Text;
+    Image2: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    N3: Attribute.Integer;
+    Heading3: Attribute.String;
+    Body3: Attribute.Text;
+    Image3: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    N4: Attribute.Integer;
+    Heading4: Attribute.String;
+    Body4: Attribute.Text;
+    Image4: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-us-detail.about-us-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-us-detail.about-us-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
+  collectionName: 'case_studies';
+  info: {
+    singularName: 'case-study';
+    pluralName: 'case-studies';
+    displayName: 'Case Study';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Carousel: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Link1: Attribute.String;
+    Link2: Attribute.String;
+    Link3: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsultationConsultation extends Schema.SingleType {
+  collectionName: 'consultations';
+  info: {
+    singularName: 'consultation';
+    pluralName: 'consultations';
+    displayName: 'Consultation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation.consultation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCtaCta extends Schema.CollectionType {
+  collectionName: 'ctas';
+  info: {
+    singularName: 'cta';
+    pluralName: 'ctas';
+    displayName: 'CTA';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Text: Attribute.String;
+    Link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::cta.cta', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::cta.cta', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDigitalWorldDigitalWorld extends Schema.CollectionType {
+  collectionName: 'digital_worlds';
+  info: {
+    singularName: 'digital-world';
+    pluralName: 'digital-worlds';
+    displayName: 'Digital World';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Address: Attribute.Component<'address.address'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::digital-world.digital-world',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::digital-world.digital-world',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.Text;
+    Q1: Attribute.String;
+    A1: Attribute.Text;
+    Q2: Attribute.String;
+    A2: Attribute.Text;
+    Q3: Attribute.String;
+    A3: Attribute.Text;
+    Q4: Attribute.String;
+    A4: Attribute.Text;
+    Q5: Attribute.String;
+    A5: Attribute.Text;
+    Q6: Attribute.String;
+    A6: Attribute.Text;
+    Q7: Attribute.String;
+    A7: Attribute.Text;
+    Q8: Attribute.String;
+    A8: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGuaranteeGuarantee extends Schema.CollectionType {
+  collectionName: 'guarantees';
+  info: {
+    singularName: 'guarantee';
+    pluralName: 'guarantees';
+    displayName: 'Guarantee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading1: Attribute.String;
+    Body1: Attribute.Text;
+    Heading2: Attribute.String;
+    Body2: Attribute.Text;
+    Heading3: Attribute.String;
+    Body3: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::guarantee.guarantee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::guarantee.guarantee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeaderHeader extends Schema.CollectionType {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Header';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.Text;
+    Heading: Attribute.String;
+    Subheading: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeaderServiceHeaderService extends Schema.CollectionType {
+  collectionName: 'header_services';
+  info: {
+    singularName: 'header-service';
+    pluralName: 'header-services';
+    displayName: 'HeaderService';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.Text;
+    Heading: Attribute.String;
+    Subheading: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header-service.header-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header-service.header-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurServiceOurService extends Schema.CollectionType {
+  collectionName: 'our_services';
+  info: {
+    singularName: 'our-service';
+    pluralName: 'our-services';
+    displayName: 'OurService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.Text;
+    Service1: Attribute.String;
+    Description1: Attribute.Text;
+    Media1: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Service2: Attribute.String;
+    Description2: Attribute.Text;
+    Media2: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Service3: Attribute.String;
+    Description3: Attribute.Text;
+    Media3: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Service4: Attribute.String;
+    Description4: Attribute.Text;
+    Media4: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Service5: Attribute.String;
+    Description5: Attribute.Text;
+    Media5: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Service6: Attribute.String;
+    Description6: Attribute.Text;
+    Media6: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-service.our-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-service.our-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiQneQne extends Schema.CollectionType {
+  collectionName: 'qnes';
+  info: {
+    singularName: 'qne';
+    pluralName: 'qnes';
+    displayName: 'qne';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Body1: Attribute.Text;
+    Body2: Attribute.Text;
+    Body3: Attribute.Text;
+    Text: Attribute.String;
+    Link: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::qne.qne', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::qne.qne', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceDetailServiceDetail extends Schema.CollectionType {
+  collectionName: 'service_details';
+  info: {
+    singularName: 'service-detail';
+    pluralName: 'service-details';
+    displayName: 'ServiceDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ServiceDetails: Attribute.Component<
+      'service-details.service-details',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-detail.service-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-detail.service-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -866,8 +1218,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::header.header': ApiHeaderHeader;
-      'api::header-service.header-service': ApiHeaderServiceHeaderService;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -876,6 +1226,18 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-us-detail.about-us-detail': ApiAboutUsDetailAboutUsDetail;
+      'api::case-study.case-study': ApiCaseStudyCaseStudy;
+      'api::consultation.consultation': ApiConsultationConsultation;
+      'api::cta.cta': ApiCtaCta;
+      'api::digital-world.digital-world': ApiDigitalWorldDigitalWorld;
+      'api::faq.faq': ApiFaqFaq;
+      'api::guarantee.guarantee': ApiGuaranteeGuarantee;
+      'api::header.header': ApiHeaderHeader;
+      'api::header-service.header-service': ApiHeaderServiceHeaderService;
+      'api::our-service.our-service': ApiOurServiceOurService;
+      'api::qne.qne': ApiQneQne;
+      'api::service-detail.service-detail': ApiServiceDetailServiceDetail;
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "qnes",
+  "info": {
+    "singularName": "qne",
+    "pluralName": "qnes",
+    "displayName": "qne"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Body1": {
+      "type": "text"
+    },
+    "Body2": {
+      "type": "text"
+    },
+    "Body3": {
+      "type": "text"
+    },
+    "Text": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
