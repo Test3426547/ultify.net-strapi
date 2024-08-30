@@ -1015,8 +1015,8 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     URLBusinessName: Attribute.String;
-    Name: Attribute.String & Attribute.Required;
-    Email: Attribute.String & Attribute.Required;
+    Name: Attribute.String;
+    Email: Attribute.String;
     Phone: Attribute.String;
     Button: Attribute.String;
     Description: Attribute.String;
@@ -1088,6 +1088,39 @@ export interface ApiDigitalWorldDigitalWorld extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::digital-world.digital-world',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEnquiryEnquiry extends Schema.CollectionType {
+  collectionName: 'enquiries';
+  info: {
+    singularName: 'enquiry';
+    pluralName: 'enquiries';
+    displayName: 'Enquiry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    URLBusinessName: Attribute.String;
+    Name: Attribute.String;
+    Email: Attribute.String;
+    Phone: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::enquiry.enquiry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::enquiry.enquiry',
       'oneToOne',
       'admin::user'
     > &
@@ -1342,6 +1375,7 @@ declare module '@strapi/types' {
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::cta.cta': ApiCtaCta;
       'api::digital-world.digital-world': ApiDigitalWorldDigitalWorld;
+      'api::enquiry.enquiry': ApiEnquiryEnquiry;
       'api::faq.faq': ApiFaqFaq;
       'api::guarantee.guarantee': ApiGuaranteeGuarantee;
       'api::header.header': ApiHeaderHeader;
