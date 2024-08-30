@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-us-detail",
     "pluralName": "about-us-details",
-    "displayName": "AboutUsDetail"
+    "displayName": "AboutUsDetail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,81 +15,11 @@
     "Title": {
       "type": "string"
     },
-    "N1": {
-      "type": "integer"
-    },
-    "Heading1": {
-      "type": "string"
-    },
-    "Body1": {
-      "type": "text"
-    },
-    "Image1": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "N2": {
-      "type": "integer"
-    },
-    "Heading2": {
-      "type": "string"
-    },
-    "Body2": {
-      "type": "text"
-    },
-    "Image2": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "N3": {
-      "type": "integer"
-    },
-    "Heading3": {
-      "type": "string"
-    },
-    "Body3": {
-      "type": "text"
-    },
-    "Image3": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "N4": {
-      "type": "integer"
-    },
-    "Heading4": {
-      "type": "string"
-    },
-    "Body4": {
-      "type": "text"
-    },
-    "Image4": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "AboutUsCard": {
+      "displayName": "AboutUsCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us-card.about-us-card"
     }
   }
 }

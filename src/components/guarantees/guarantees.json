@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_guarantees_guarantees",
+  "info": {
+    "displayName": "Guarantees"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    }
+  }
+}

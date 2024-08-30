@@ -4,7 +4,8 @@
   "info": {
     "singularName": "guarantee",
     "pluralName": "guarantees",
-    "displayName": "Guarantee"
+    "displayName": "Guarantee",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,32 +16,21 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "Heading1": {
-      "type": "string"
-    },
-    "Body1": {
-      "type": "text"
-    },
-    "Heading2": {
-      "type": "string"
-    },
-    "Body2": {
-      "type": "text"
-    },
-    "Heading3": {
-      "type": "string"
-    },
-    "Body3": {
-      "type": "text"
+    "Guarantees": {
+      "displayName": "Guarantees",
+      "type": "component",
+      "repeatable": true,
+      "component": "guarantees.guarantees"
     }
   }
 }

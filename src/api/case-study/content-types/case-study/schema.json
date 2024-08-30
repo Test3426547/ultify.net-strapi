@@ -4,7 +4,8 @@
   "info": {
     "singularName": "case-study",
     "pluralName": "case-studies",
-    "displayName": "Case Study"
+    "displayName": "Case Study",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,24 +15,11 @@
     "Title": {
       "type": "string"
     },
-    "Carousel": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
-    "Link1": {
-      "type": "string"
-    },
-    "Link2": {
-      "type": "string"
-    },
-    "Link3": {
-      "type": "string"
+    "PhotoLink": {
+      "displayName": "PhotoLink",
+      "type": "component",
+      "repeatable": true,
+      "component": "photo-link.photo-link"
     }
   }
 }

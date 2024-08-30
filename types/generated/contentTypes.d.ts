@@ -788,34 +788,139 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface PluginEzformsSubmission extends Schema.CollectionType {
+  collectionName: 'ezforms_submission';
+  info: {
+    tableName: 'submission';
+    singularName: 'submission';
+    pluralName: 'submissions';
+    displayName: 'Form Submissions';
+    description: 'A Place for all your form submissions';
+    kind: 'collectionType';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    score: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    formName: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    data: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::ezforms.submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::ezforms.submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface PluginEzformsRecipient extends Schema.CollectionType {
+  collectionName: 'ezforms_recipient';
+  info: {
+    tableName: 'recipients';
+    singularName: 'recipient';
+    pluralName: 'recipients';
+    displayName: 'Notification Recipients';
+    description: 'List of Notification Recipients';
+    kind: 'collectionType';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    email: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    number: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::ezforms.recipient',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::ezforms.recipient',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAboutUsDetailAboutUsDetail extends Schema.CollectionType {
   collectionName: 'about_us_details';
   info: {
     singularName: 'about-us-detail';
     pluralName: 'about-us-details';
     displayName: 'AboutUsDetail';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    N1: Attribute.Integer;
-    Heading1: Attribute.String;
-    Body1: Attribute.Text;
-    Image1: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    N2: Attribute.Integer;
-    Heading2: Attribute.String;
-    Body2: Attribute.Text;
-    Image2: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    N3: Attribute.Integer;
-    Heading3: Attribute.String;
-    Body3: Attribute.Text;
-    Image3: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    N4: Attribute.Integer;
-    Heading4: Attribute.String;
-    Body4: Attribute.Text;
-    Image4: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    AboutUsCard: Attribute.Component<'about-us-card.about-us-card', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -840,16 +945,14 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
     singularName: 'case-study';
     pluralName: 'case-studies';
     displayName: 'Case Study';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    Carousel: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    Link1: Attribute.String;
-    Link2: Attribute.String;
-    Link3: Attribute.String;
+    PhotoLink: Attribute.Component<'photo-link.photo-link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -898,6 +1001,43 @@ export interface ApiConsultationConsultation extends Schema.SingleType {
   };
 }
 
+export interface ApiContactFormContactForm extends Schema.CollectionType {
+  collectionName: 'contact_forms';
+  info: {
+    singularName: 'contact-form';
+    pluralName: 'contact-forms';
+    displayName: 'Contact Form';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    URLBusinessName: Attribute.String;
+    Name: Attribute.String & Attribute.Required;
+    Email: Attribute.String & Attribute.Required;
+    Phone: Attribute.String;
+    Button: Attribute.String;
+    Description: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCtaCta extends Schema.CollectionType {
   collectionName: 'ctas';
   info: {
@@ -928,6 +1068,7 @@ export interface ApiDigitalWorldDigitalWorld extends Schema.CollectionType {
     singularName: 'digital-world';
     pluralName: 'digital-worlds';
     displayName: 'Digital World';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -960,6 +1101,7 @@ export interface ApiFaqFaq extends Schema.CollectionType {
     singularName: 'faq';
     pluralName: 'faqs';
     displayName: 'FAQ';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -967,22 +1109,7 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Subtitle: Attribute.Text;
-    Q1: Attribute.String;
-    A1: Attribute.Text;
-    Q2: Attribute.String;
-    A2: Attribute.Text;
-    Q3: Attribute.String;
-    A3: Attribute.Text;
-    Q4: Attribute.String;
-    A4: Attribute.Text;
-    Q5: Attribute.String;
-    A5: Attribute.Text;
-    Q6: Attribute.String;
-    A6: Attribute.Text;
-    Q7: Attribute.String;
-    A7: Attribute.Text;
-    Q8: Attribute.String;
-    A8: Attribute.Text;
+    FAQ: Attribute.Component<'faq.faq', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -999,6 +1126,7 @@ export interface ApiGuaranteeGuarantee extends Schema.CollectionType {
     singularName: 'guarantee';
     pluralName: 'guarantees';
     displayName: 'Guarantee';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1006,12 +1134,7 @@ export interface ApiGuaranteeGuarantee extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Heading1: Attribute.String;
-    Body1: Attribute.Text;
-    Heading2: Attribute.String;
-    Body2: Attribute.Text;
-    Heading3: Attribute.String;
-    Body3: Attribute.Text;
+    Guarantees: Attribute.Component<'guarantees.guarantees', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1046,6 +1169,7 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
     Subtitle: Attribute.Text;
     Heading: Attribute.String;
     Subheading: Attribute.Text;
+    Link: Attribute.Component<'link.link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1080,6 +1204,7 @@ export interface ApiHeaderServiceHeaderService extends Schema.CollectionType {
     Subtitle: Attribute.Text;
     Heading: Attribute.String;
     Subheading: Attribute.Text;
+    Pill: Attribute.Component<'pill.pill', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1104,6 +1229,7 @@ export interface ApiOurServiceOurService extends Schema.CollectionType {
     singularName: 'our-service';
     pluralName: 'our-services';
     displayName: 'OurService';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1111,24 +1237,7 @@ export interface ApiOurServiceOurService extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Subtitle: Attribute.Text;
-    Service1: Attribute.String;
-    Description1: Attribute.Text;
-    Media1: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Service2: Attribute.String;
-    Description2: Attribute.Text;
-    Media2: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Service3: Attribute.String;
-    Description3: Attribute.Text;
-    Media3: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Service4: Attribute.String;
-    Description4: Attribute.Text;
-    Media4: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    Service5: Attribute.String;
-    Description5: Attribute.Text;
-    Media5: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Service6: Attribute.String;
-    Description6: Attribute.Text;
-    Media6: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ServiceCard: Attribute.Component<'service-card.service-card', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1153,15 +1262,14 @@ export interface ApiQneQne extends Schema.CollectionType {
     singularName: 'qne';
     pluralName: 'qnes';
     displayName: 'qne';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    Body1: Attribute.Text;
-    Body2: Attribute.Text;
-    Body3: Attribute.Text;
+    Body: Attribute.Component<'body.body', true>;
     Text: Attribute.String;
     Link: Attribute.String;
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -1226,9 +1334,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'plugin::ezforms.submission': PluginEzformsSubmission;
+      'plugin::ezforms.recipient': PluginEzformsRecipient;
       'api::about-us-detail.about-us-detail': ApiAboutUsDetailAboutUsDetail;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::consultation.consultation': ApiConsultationConsultation;
+      'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::cta.cta': ApiCtaCta;
       'api::digital-world.digital-world': ApiDigitalWorldDigitalWorld;
       'api::faq.faq': ApiFaqFaq;

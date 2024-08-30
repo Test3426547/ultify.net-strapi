@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_about_us_card_about_us_cards",
+  "info": {
+    "displayName": "AboutUsCard"
+  },
+  "options": {},
+  "attributes": {
+    "Number": {
+      "type": "integer"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

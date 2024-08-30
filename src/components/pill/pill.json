@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_pill_pills",
+  "info": {
+    "displayName": "Pill"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    }
+  }
+}

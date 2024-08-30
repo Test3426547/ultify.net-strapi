@@ -4,7 +4,8 @@
   "info": {
     "singularName": "digital-world",
     "pluralName": "digital-worlds",
-    "displayName": "Digital World"
+    "displayName": "Digital World",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Address": {
       "displayName": "Address",

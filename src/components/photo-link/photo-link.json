@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_photo_link_photo_links",
+  "info": {
+    "displayName": "PhotoLink"
+  },
+  "options": {},
+  "attributes": {
+    "Photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

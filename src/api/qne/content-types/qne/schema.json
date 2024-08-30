@@ -4,7 +4,8 @@
   "info": {
     "singularName": "qne",
     "pluralName": "qnes",
-    "displayName": "qne"
+    "displayName": "qne",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +15,11 @@
     "Title": {
       "type": "string"
     },
-    "Body1": {
-      "type": "text"
-    },
-    "Body2": {
-      "type": "text"
-    },
-    "Body3": {
-      "type": "text"
+    "Body": {
+      "displayName": "Body",
+      "type": "component",
+      "repeatable": true,
+      "component": "body.body"
     },
     "Text": {
       "type": "string"

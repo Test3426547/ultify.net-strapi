@@ -23,6 +23,12 @@
     },
     "Subheading": {
       "type": "text"
+    },
+    "Link": {
+      "displayName": "Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "link.link"
     }
   }
 }

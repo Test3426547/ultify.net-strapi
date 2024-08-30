@@ -23,6 +23,12 @@
     },
     "Subheading": {
       "type": "text"
+    },
+    "Pill": {
+      "displayName": "Pill",
+      "type": "component",
+      "repeatable": true,
+      "component": "pill.pill"
     }
   }
 }
