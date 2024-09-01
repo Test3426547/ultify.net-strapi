@@ -1178,6 +1178,38 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.CollectionType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Email: Attribute.String;
+    Link: Attribute.Component<'link.link', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGuaranteeGuarantee extends Schema.CollectionType {
   collectionName: 'guarantees';
   info: {
@@ -1437,6 +1469,7 @@ declare module '@strapi/types' {
       'api::dna.dna': ApiDnaDna;
       'api::enquiry.enquiry': ApiEnquiryEnquiry;
       'api::faq.faq': ApiFaqFaq;
+      'api::footer.footer': ApiFooterFooter;
       'api::guarantee.guarantee': ApiGuaranteeGuarantee;
       'api::header.header': ApiHeaderHeader;
       'api::header-other.header-other': ApiHeaderOtherHeaderOther;
