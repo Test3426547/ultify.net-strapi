@@ -4,7 +4,8 @@
   "info": {
     "singularName": "header-other",
     "pluralName": "header-others",
-    "displayName": "HeaderOther"
+    "displayName": "HeaderOther",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,8 +20,18 @@
     },
     "Link": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "link.link"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -1252,6 +1252,7 @@ export interface ApiHeaderOtherHeaderOther extends Schema.CollectionType {
     singularName: 'header-other';
     pluralName: 'header-others';
     displayName: 'HeaderOther';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1259,7 +1260,8 @@ export interface ApiHeaderOtherHeaderOther extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Subtitle: Attribute.String;
-    Link: Attribute.Component<'link.link', true>;
+    Link: Attribute.Component<'link.link'>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
