@@ -1,22 +1,15 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PillPill extends Schema.Component {
-  collectionName: 'components_pill_pills';
+export interface ServiceCardServiceCard extends Schema.Component {
+  collectionName: 'components_service_card_service_cards';
   info: {
-    displayName: 'Pill';
+    displayName: 'ServiceCard';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String;
-  };
-}
-
-export interface PhotoLinkPhotoLink extends Schema.Component {
-  collectionName: 'components_photo_link_photo_links';
-  info: {
-    displayName: 'PhotoLink';
-  };
-  attributes: {
-    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Link: Attribute.String;
   };
 }
@@ -33,17 +26,35 @@ export interface ServiceDetailsServiceDetails extends Schema.Component {
   };
 }
 
-export interface ServiceCardServiceCard extends Schema.Component {
-  collectionName: 'components_service_card_service_cards';
+export interface PhotoLinkPhotoLink extends Schema.Component {
+  collectionName: 'components_photo_link_photo_links';
   info: {
-    displayName: 'ServiceCard';
-    description: '';
+    displayName: 'PhotoLink';
   };
   attributes: {
-    Heading: Attribute.String;
-    Body: Attribute.Text;
+    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Link: Attribute.String;
+  };
+}
+
+export interface PhotoLinkCards extends Schema.Component {
+  collectionName: 'components_photo_link_cards';
+  info: {
+    displayName: 'Cards';
+  };
+  attributes: {
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Link: Attribute.String;
+  };
+}
+
+export interface PillPill extends Schema.Component {
+  collectionName: 'components_pill_pills';
+  info: {
+    displayName: 'Pill';
+  };
+  attributes: {
+    Title: Attribute.String;
   };
 }
 
@@ -120,10 +131,11 @@ export interface AboutUsCardAboutUsCard extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'pill.pill': PillPill;
-      'photo-link.photo-link': PhotoLinkPhotoLink;
-      'service-details.service-details': ServiceDetailsServiceDetails;
       'service-card.service-card': ServiceCardServiceCard;
+      'service-details.service-details': ServiceDetailsServiceDetails;
+      'photo-link.photo-link': PhotoLinkPhotoLink;
+      'photo-link.cards': PhotoLinkCards;
+      'pill.pill': PillPill;
       'guarantees.guarantees': GuaranteesGuarantees;
       'link.link': LinkLink;
       'faq.faq': FaqFaq;

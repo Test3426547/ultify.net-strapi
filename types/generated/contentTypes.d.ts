@@ -939,6 +939,37 @@ export interface ApiAboutUsDetailAboutUsDetail extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarouselCarousel extends Schema.CollectionType {
+  collectionName: 'carousels';
+  info: {
+    singularName: 'carousel';
+    pluralName: 'carousels';
+    displayName: 'Carousel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Cards: Attribute.Component<'photo-link.cards', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
   collectionName: 'case_studies';
   info: {
@@ -1464,6 +1495,7 @@ declare module '@strapi/types' {
       'plugin::ezforms.submission': PluginEzformsSubmission;
       'plugin::ezforms.recipient': PluginEzformsRecipient;
       'api::about-us-detail.about-us-detail': ApiAboutUsDetailAboutUsDetail;
+      'api::carousel.carousel': ApiCarouselCarousel;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::consultation.consultation': ApiConsultationConsultation;
       'api::contact-form.contact-form': ApiContactFormContactForm;
