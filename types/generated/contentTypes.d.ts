@@ -1184,6 +1184,7 @@ export interface ApiFooterFooter extends Schema.CollectionType {
     singularName: 'footer';
     pluralName: 'footers';
     displayName: 'Footer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1192,6 +1193,7 @@ export interface ApiFooterFooter extends Schema.CollectionType {
     Logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Email: Attribute.String;
     Link: Attribute.Component<'link.link', true>;
+    Copyright: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
