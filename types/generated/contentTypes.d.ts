@@ -1246,6 +1246,38 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeaderOtherHeaderOther extends Schema.CollectionType {
+  collectionName: 'header_others';
+  info: {
+    singularName: 'header-other';
+    pluralName: 'header-others';
+    displayName: 'HeaderOther';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Link: Attribute.Component<'link.link', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header-other.header-other',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header-other.header-other',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeaderServiceHeaderService extends Schema.CollectionType {
   collectionName: 'header_services';
   info: {
@@ -1405,6 +1437,7 @@ declare module '@strapi/types' {
       'api::faq.faq': ApiFaqFaq;
       'api::guarantee.guarantee': ApiGuaranteeGuarantee;
       'api::header.header': ApiHeaderHeader;
+      'api::header-other.header-other': ApiHeaderOtherHeaderOther;
       'api::header-service.header-service': ApiHeaderServiceHeaderService;
       'api::our-service.our-service': ApiOurServiceOurService;
       'api::qne.qne': ApiQneQne;

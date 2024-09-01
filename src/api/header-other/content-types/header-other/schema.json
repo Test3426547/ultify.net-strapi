@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "header_others",
+  "info": {
+    "singularName": "header-other",
+    "pluralName": "header-others",
+    "displayName": "HeaderOther"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.link"
+    }
+  }
+}
