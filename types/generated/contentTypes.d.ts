@@ -1193,7 +1193,8 @@ export interface ApiFooterFooter extends Schema.CollectionType {
     Logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Email: Attribute.String;
     Link: Attribute.Component<'link.link', true>;
-    Copyright: Attribute.String;
+    Text: Attribute.String;
+    Pill: Attribute.Component<'link.link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -31,8 +31,13 @@
       "repeatable": true,
       "component": "link.link"
     },
-    "Copyright": {
+    "Text": {
       "type": "string"
+    },
+    "Pill": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.link"
     }
   }
 }
