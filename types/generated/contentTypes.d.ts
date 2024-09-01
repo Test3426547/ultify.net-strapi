@@ -1095,6 +1095,31 @@ export interface ApiDigitalWorldDigitalWorld extends Schema.CollectionType {
   };
 }
 
+export interface ApiDnaDna extends Schema.CollectionType {
+  collectionName: 'dnas';
+  info: {
+    singularName: 'dna';
+    pluralName: 'dnas';
+    displayName: 'DNA';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Body: Attribute.Component<'body.body', true>;
+    ReadMore: Attribute.Component<'body.body', true>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::dna.dna', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::dna.dna', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEnquiryEnquiry extends Schema.CollectionType {
   collectionName: 'enquiries';
   info: {
@@ -1375,6 +1400,7 @@ declare module '@strapi/types' {
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::cta.cta': ApiCtaCta;
       'api::digital-world.digital-world': ApiDigitalWorldDigitalWorld;
+      'api::dna.dna': ApiDnaDna;
       'api::enquiry.enquiry': ApiEnquiryEnquiry;
       'api::faq.faq': ApiFaqFaq;
       'api::guarantee.guarantee': ApiGuaranteeGuarantee;

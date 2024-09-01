@@ -1,24 +1,14 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ServiceDetailsServiceDetails extends Schema.Component {
-  collectionName: 'components_service_details_service_details';
+export interface ServiceCardServiceCard extends Schema.Component {
+  collectionName: 'components_service_card_service_cards';
   info: {
-    displayName: 'ServiceDetails';
+    displayName: 'ServiceCard';
   };
   attributes: {
     Heading: Attribute.String;
-    Description: Attribute.Text;
+    Body: Attribute.Text;
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface PillPill extends Schema.Component {
-  collectionName: 'components_pill_pills';
-  info: {
-    displayName: 'Pill';
-  };
-  attributes: {
-    Title: Attribute.String;
   };
 }
 
@@ -33,26 +23,25 @@ export interface PhotoLinkPhotoLink extends Schema.Component {
   };
 }
 
-export interface ServiceCardServiceCard extends Schema.Component {
-  collectionName: 'components_service_card_service_cards';
+export interface PillPill extends Schema.Component {
+  collectionName: 'components_pill_pills';
   info: {
-    displayName: 'ServiceCard';
+    displayName: 'Pill';
   };
   attributes: {
-    Heading: Attribute.String;
-    Body: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
   };
 }
 
-export interface LinkLink extends Schema.Component {
-  collectionName: 'components_link_links';
+export interface ServiceDetailsServiceDetails extends Schema.Component {
+  collectionName: 'components_service_details_service_details';
   info: {
-    displayName: 'Link';
+    displayName: 'ServiceDetails';
   };
   attributes: {
-    Text: Attribute.String;
-    Link: Attribute.String;
+    Heading: Attribute.String;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -64,6 +53,17 @@ export interface GuaranteesGuarantees extends Schema.Component {
   attributes: {
     Heading: Attribute.String;
     Body: Attribute.Text;
+  };
+}
+
+export interface LinkLink extends Schema.Component {
+  collectionName: 'components_link_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    Text: Attribute.String;
+    Link: Attribute.String;
   };
 }
 
@@ -88,6 +88,19 @@ export interface FaqFaq extends Schema.Component {
   };
 }
 
+export interface AboutUsCardAboutUsCard extends Schema.Component {
+  collectionName: 'components_about_us_card_about_us_cards';
+  info: {
+    displayName: 'AboutUsCard';
+  };
+  attributes: {
+    Number: Attribute.Integer;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface AddressAddress extends Schema.Component {
   collectionName: 'components_address_addresses';
   info: {
@@ -102,32 +115,19 @@ export interface AddressAddress extends Schema.Component {
   };
 }
 
-export interface AboutUsCardAboutUsCard extends Schema.Component {
-  collectionName: 'components_about_us_card_about_us_cards';
-  info: {
-    displayName: 'AboutUsCard';
-  };
-  attributes: {
-    Number: Attribute.Integer;
-    Heading: Attribute.String;
-    Body: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'service-details.service-details': ServiceDetailsServiceDetails;
-      'pill.pill': PillPill;
-      'photo-link.photo-link': PhotoLinkPhotoLink;
       'service-card.service-card': ServiceCardServiceCard;
-      'link.link': LinkLink;
+      'photo-link.photo-link': PhotoLinkPhotoLink;
+      'pill.pill': PillPill;
+      'service-details.service-details': ServiceDetailsServiceDetails;
       'guarantees.guarantees': GuaranteesGuarantees;
+      'link.link': LinkLink;
       'body.body': BodyBody;
       'faq.faq': FaqFaq;
-      'address.address': AddressAddress;
       'about-us-card.about-us-card': AboutUsCardAboutUsCard;
+      'address.address': AddressAddress;
     }
   }
 }
