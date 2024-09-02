@@ -1,31 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ServiceCardServiceCard extends Schema.Component {
-  collectionName: 'components_service_card_service_cards';
-  info: {
-    displayName: 'ServiceCard';
-    description: '';
-  };
-  attributes: {
-    Heading: Attribute.String;
-    Body: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Link: Attribute.String;
-  };
-}
-
-export interface ServiceDetailsServiceDetails extends Schema.Component {
-  collectionName: 'components_service_details_service_details';
-  info: {
-    displayName: 'ServiceDetails';
-  };
-  attributes: {
-    Heading: Attribute.String;
-    Description: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 export interface PhotoLinkPhotoLink extends Schema.Component {
   collectionName: 'components_photo_link_photo_links';
   info: {
@@ -48,6 +22,20 @@ export interface PhotoLinkCards extends Schema.Component {
   };
 }
 
+export interface ServiceCardServiceCard extends Schema.Component {
+  collectionName: 'components_service_card_service_cards';
+  info: {
+    displayName: 'ServiceCard';
+    description: '';
+  };
+  attributes: {
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Link: Attribute.String;
+  };
+}
+
 export interface PillPill extends Schema.Component {
   collectionName: 'components_pill_pills';
   info: {
@@ -58,14 +46,15 @@ export interface PillPill extends Schema.Component {
   };
 }
 
-export interface GuaranteesGuarantees extends Schema.Component {
-  collectionName: 'components_guarantees_guarantees';
+export interface ServiceDetailsServiceDetails extends Schema.Component {
+  collectionName: 'components_service_details_service_details';
   info: {
-    displayName: 'Guarantees';
+    displayName: 'ServiceDetails';
   };
   attributes: {
     Heading: Attribute.String;
-    Body: Attribute.Text;
+    Description: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -77,6 +66,17 @@ export interface LinkLink extends Schema.Component {
   attributes: {
     Text: Attribute.String;
     Link: Attribute.String;
+  };
+}
+
+export interface GuaranteesGuarantees extends Schema.Component {
+  collectionName: 'components_guarantees_guarantees';
+  info: {
+    displayName: 'Guarantees';
+  };
+  attributes: {
+    Heading: Attribute.String;
+    Body: Attribute.Text;
   };
 }
 
@@ -131,13 +131,13 @@ export interface AboutUsCardAboutUsCard extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'service-card.service-card': ServiceCardServiceCard;
-      'service-details.service-details': ServiceDetailsServiceDetails;
       'photo-link.photo-link': PhotoLinkPhotoLink;
       'photo-link.cards': PhotoLinkCards;
+      'service-card.service-card': ServiceCardServiceCard;
       'pill.pill': PillPill;
-      'guarantees.guarantees': GuaranteesGuarantees;
+      'service-details.service-details': ServiceDetailsServiceDetails;
       'link.link': LinkLink;
+      'guarantees.guarantees': GuaranteesGuarantees;
       'faq.faq': FaqFaq;
       'body.body': BodyBody;
       'address.address': AddressAddress;

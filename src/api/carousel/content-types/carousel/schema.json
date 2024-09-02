@@ -4,7 +4,8 @@
   "info": {
     "singularName": "carousel",
     "pluralName": "carousels",
-    "displayName": "Carousel"
+    "displayName": "Carousel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,9 @@
       "type": "component",
       "repeatable": true,
       "component": "photo-link.cards"
+    },
+    "Text": {
+      "type": "string"
     }
   }
 }
