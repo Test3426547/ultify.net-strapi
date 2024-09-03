@@ -1,19 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ServiceCardServiceCard extends Schema.Component {
-  collectionName: 'components_service_card_service_cards';
-  info: {
-    displayName: 'ServiceCard';
-    description: '';
-  };
-  attributes: {
-    Heading: Attribute.String;
-    Body: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Link: Attribute.String;
-  };
-}
-
 export interface PillPill extends Schema.Component {
   collectionName: 'components_pill_pills';
   info: {
@@ -58,6 +44,31 @@ export interface PhotoLinkCards extends Schema.Component {
   };
 }
 
+export interface ServiceCardServiceCard extends Schema.Component {
+  collectionName: 'components_service_card_service_cards';
+  info: {
+    displayName: 'ServiceCard';
+    description: '';
+  };
+  attributes: {
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Link: Attribute.String;
+  };
+}
+
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    Question: Attribute.String;
+    Answer: Attribute.Text;
+  };
+}
+
 export interface LinkLink extends Schema.Component {
   collectionName: 'components_link_links';
   info: {
@@ -87,17 +98,6 @@ export interface BodyBody extends Schema.Component {
   };
   attributes: {
     Body: Attribute.Text;
-  };
-}
-
-export interface FaqFaq extends Schema.Component {
-  collectionName: 'components_faq_faqs';
-  info: {
-    displayName: 'FAQ';
-  };
-  attributes: {
-    Question: Attribute.String;
-    Answer: Attribute.Text;
   };
 }
 
@@ -131,15 +131,15 @@ export interface AddressAddress extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'service-card.service-card': ServiceCardServiceCard;
       'pill.pill': PillPill;
       'service-details.service-details': ServiceDetailsServiceDetails;
       'photo-link.photo-link': PhotoLinkPhotoLink;
       'photo-link.cards': PhotoLinkCards;
+      'service-card.service-card': ServiceCardServiceCard;
+      'faq.faq': FaqFaq;
       'link.link': LinkLink;
       'guarantees.guarantees': GuaranteesGuarantees;
       'body.body': BodyBody;
-      'faq.faq': FaqFaq;
       'about-us-card.about-us-card': AboutUsCardAboutUsCard;
       'address.address': AddressAddress;
     }

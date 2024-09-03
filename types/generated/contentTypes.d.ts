@@ -1010,6 +1010,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     singularName: 'consultation';
     pluralName: 'consultations';
     displayName: 'Consultation';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1018,6 +1019,7 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Title: Attribute.String;
     Field: Attribute.Component<'body.body', true>;
+    Button: Attribute.String;
     Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
