@@ -1004,7 +1004,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
   };
 }
 
-export interface ApiConsultationConsultation extends Schema.SingleType {
+export interface ApiConsultationConsultation extends Schema.CollectionType {
   collectionName: 'consultations';
   info: {
     singularName: 'consultation';
@@ -1016,6 +1016,9 @@ export interface ApiConsultationConsultation extends Schema.SingleType {
   };
   attributes: {
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
+    Field: Attribute.Component<'body.body', true>;
+    Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1047,12 +1050,9 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
   };
   attributes: {
     Title: Attribute.String;
-    URLBusinessName: Attribute.String;
-    Name: Attribute.String;
-    Email: Attribute.String;
-    Phone: Attribute.String;
+    Placeholder: Attribute.Component<'body.body', true>;
     Button: Attribute.String;
-    Description: Attribute.String;
+    Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

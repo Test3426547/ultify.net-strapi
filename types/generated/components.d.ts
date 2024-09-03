@@ -1,27 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PhotoLinkPhotoLink extends Schema.Component {
-  collectionName: 'components_photo_link_photo_links';
-  info: {
-    displayName: 'PhotoLink';
-  };
-  attributes: {
-    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Link: Attribute.String;
-  };
-}
-
-export interface PhotoLinkCards extends Schema.Component {
-  collectionName: 'components_photo_link_cards';
-  info: {
-    displayName: 'Cards';
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Link: Attribute.String;
-  };
-}
-
 export interface ServiceCardServiceCard extends Schema.Component {
   collectionName: 'components_service_card_service_cards';
   info: {
@@ -58,6 +36,28 @@ export interface ServiceDetailsServiceDetails extends Schema.Component {
   };
 }
 
+export interface PhotoLinkPhotoLink extends Schema.Component {
+  collectionName: 'components_photo_link_photo_links';
+  info: {
+    displayName: 'PhotoLink';
+  };
+  attributes: {
+    Photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Link: Attribute.String;
+  };
+}
+
+export interface PhotoLinkCards extends Schema.Component {
+  collectionName: 'components_photo_link_cards';
+  info: {
+    displayName: 'Cards';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Link: Attribute.String;
+  };
+}
+
 export interface LinkLink extends Schema.Component {
   collectionName: 'components_link_links';
   info: {
@@ -80,6 +80,16 @@ export interface GuaranteesGuarantees extends Schema.Component {
   };
 }
 
+export interface BodyBody extends Schema.Component {
+  collectionName: 'components_body_bodies';
+  info: {
+    displayName: 'Body';
+  };
+  attributes: {
+    Body: Attribute.Text;
+  };
+}
+
 export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
@@ -91,13 +101,16 @@ export interface FaqFaq extends Schema.Component {
   };
 }
 
-export interface BodyBody extends Schema.Component {
-  collectionName: 'components_body_bodies';
+export interface AboutUsCardAboutUsCard extends Schema.Component {
+  collectionName: 'components_about_us_card_about_us_cards';
   info: {
-    displayName: 'Body';
+    displayName: 'AboutUsCard';
   };
   attributes: {
+    Number: Attribute.Integer;
+    Heading: Attribute.String;
     Body: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -115,33 +128,20 @@ export interface AddressAddress extends Schema.Component {
   };
 }
 
-export interface AboutUsCardAboutUsCard extends Schema.Component {
-  collectionName: 'components_about_us_card_about_us_cards';
-  info: {
-    displayName: 'AboutUsCard';
-  };
-  attributes: {
-    Number: Attribute.Integer;
-    Heading: Attribute.String;
-    Body: Attribute.Text;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'photo-link.photo-link': PhotoLinkPhotoLink;
-      'photo-link.cards': PhotoLinkCards;
       'service-card.service-card': ServiceCardServiceCard;
       'pill.pill': PillPill;
       'service-details.service-details': ServiceDetailsServiceDetails;
+      'photo-link.photo-link': PhotoLinkPhotoLink;
+      'photo-link.cards': PhotoLinkCards;
       'link.link': LinkLink;
       'guarantees.guarantees': GuaranteesGuarantees;
-      'faq.faq': FaqFaq;
       'body.body': BodyBody;
-      'address.address': AddressAddress;
+      'faq.faq': FaqFaq;
       'about-us-card.about-us-card': AboutUsCardAboutUsCard;
+      'address.address': AddressAddress;
     }
   }
 }

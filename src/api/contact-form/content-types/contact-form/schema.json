@@ -15,25 +15,16 @@
     "Title": {
       "type": "string"
     },
-    "URLBusinessName": {
-      "type": "string"
-    },
-    "Name": {
-      "type": "string",
-      "required": false
-    },
-    "Email": {
-      "type": "string",
-      "required": false
-    },
-    "Phone": {
-      "type": "string"
+    "Placeholder": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.body"
     },
     "Button": {
       "type": "string"
     },
     "Description": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "consultations",
   "info": {
     "singularName": "consultation",
@@ -20,6 +20,17 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Field": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.body"
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }
