@@ -1689,14 +1689,18 @@ export interface ApiNavbarNavbar extends Schema.CollectionType {
     singularName: 'navbar';
     pluralName: 'navbars';
     displayName: 'Navbar';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Pages: Attribute.Component<'link.link', true>;
-    Title: Attribute.String;
-    Fields: Attribute.Component<'body.body', true>;
+    Logo: Attribute.Component<'photo-link.photo-link'>;
+    Page: Attribute.Component<'link.link', true>;
+    Text: Attribute.String;
+    Services: Attribute.Component<'link.link', true>;
+    TItle: Attribute.String;
+    Placeholder: Attribute.Component<'body.body', true>;
     Message: Attribute.Text;
     Button: Attribute.String;
     createdAt: Attribute.DateTime;
