@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "enquiries",
+  "collectionName": "contact_form_messages",
   "info": {
-    "singularName": "enquiry",
-    "pluralName": "enquiries",
-    "displayName": "Enquiry",
+    "singularName": "contact-form-message",
+    "pluralName": "contact-form-messages",
+    "displayName": "Contact Form Message",
     "description": ""
   },
   "options": {
@@ -12,17 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Business": {
-      "type": "string"
-    },
     "Name": {
       "type": "string"
     },
     "Email": {
       "type": "email"
     },
-    "Phone": {
+    "Company": {
       "type": "string"
+    },
+    "Message": {
+      "type": "text"
     }
   }
 }

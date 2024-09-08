@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "header_contacts",
+  "info": {
+    "singularName": "header-contact",
+    "pluralName": "header-contacts",
+    "displayName": "HeaderContact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_cards_blogs",
+  "info": {
+    "displayName": "Blog"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Badge": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Text": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

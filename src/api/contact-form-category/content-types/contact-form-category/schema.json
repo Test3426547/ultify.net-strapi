@@ -1,18 +1,17 @@
 {
   "kind": "collectionType",
-  "collectionName": "enquiries",
+  "collectionName": "contact_form_categories",
   "info": {
-    "singularName": "enquiry",
-    "pluralName": "enquiries",
-    "displayName": "Enquiry",
-    "description": ""
+    "singularName": "contact-form-category",
+    "pluralName": "contact-form-categories",
+    "displayName": "Contact Form Category"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Business": {
+    "Category": {
       "type": "string"
     },
     "Name": {
@@ -21,8 +20,11 @@
     "Email": {
       "type": "email"
     },
-    "Phone": {
+    "Company": {
       "type": "string"
+    },
+    "Message": {
+      "type": "text"
     }
   }
 }

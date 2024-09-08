@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seo_services",
+  "info": {
+    "singularName": "seo-service",
+    "pluralName": "seo-services",
+    "displayName": "SeoService"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "SeoCards": {
+      "displayName": "seo",
+      "type": "component",
+      "repeatable": true,
+      "component": "cards.seo"
+    }
+  }
+}

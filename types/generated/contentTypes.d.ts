@@ -939,6 +939,29 @@ export interface ApiAboutUsDetailAboutUsDetail extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    BlogCards: Attribute.Component<'cards.blog', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCarouselCarousel extends Schema.CollectionType {
   collectionName: 'carousels';
   info: {
@@ -954,6 +977,7 @@ export interface ApiCarouselCarousel extends Schema.CollectionType {
     Title: Attribute.String;
     Cards: Attribute.Component<'photo-link.cards', true>;
     Text: Attribute.String;
+    Description: Attribute.Component<'body.title', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1039,6 +1063,48 @@ export interface ApiConsultationConsultation extends Schema.CollectionType {
   };
 }
 
+export interface ApiConsultationContactConsultationContact
+  extends Schema.CollectionType {
+  collectionName: 'consultation_contacts';
+  info: {
+    singularName: 'consultation-contact';
+    pluralName: 'consultation-contacts';
+    displayName: 'ConsultationContact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Fields: Attribute.Component<'body.body', true>;
+    Text: Attribute.String;
+    ServiceSelection: Attribute.Component<'body.body', true>;
+    Button: Attribute.String;
+    Subtitle: Attribute.Text;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Body: Attribute.Text;
+    Phone: Attribute.String;
+    Email: Attribute.String;
+    SocialLinks: Attribute.Component<'link.link', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consultation-contact.consultation-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consultation-contact.consultation-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactFormContactForm extends Schema.CollectionType {
   collectionName: 'contact_forms';
   info: {
@@ -1066,6 +1132,146 @@ export interface ApiContactFormContactForm extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactFormCategoryContactFormCategory
+  extends Schema.CollectionType {
+  collectionName: 'contact_form_categories';
+  info: {
+    singularName: 'contact-form-category';
+    pluralName: 'contact-form-categories';
+    displayName: 'Contact Form Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Attribute.String;
+    Name: Attribute.String;
+    Email: Attribute.Email;
+    Company: Attribute.String;
+    Message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-form-category.contact-form-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-form-category.contact-form-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactFormFullContactFormFull
+  extends Schema.CollectionType {
+  collectionName: 'contact_form_fulls';
+  info: {
+    singularName: 'contact-form-full';
+    pluralName: 'contact-form-fulls';
+    displayName: 'Contact Form Full';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Business: Attribute.String;
+    Name: Attribute.String;
+    Email: Attribute.Email;
+    Phone: Attribute.String;
+    Category: Attribute.String;
+    Message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-form-full.contact-form-full',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-form-full.contact-form-full',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactFormMessageContactFormMessage
+  extends Schema.CollectionType {
+  collectionName: 'contact_form_messages';
+  info: {
+    singularName: 'contact-form-message';
+    pluralName: 'contact-form-messages';
+    displayName: 'Contact Form Message';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Email: Attribute.Email;
+    Company: Attribute.String;
+    Message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-form-message.contact-form-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-form-message.contact-form-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsFormContactUsForm extends Schema.CollectionType {
+  collectionName: 'contact_us_forms';
+  info: {
+    singularName: 'contact-us-form';
+    pluralName: 'contact-us-forms';
+    displayName: 'ContactUsForm';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Services: Attribute.Component<'body.body', true>;
+    Fields: Attribute.Component<'body.body', true>;
+    Message: Attribute.Text;
+    Button: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-us-form.contact-us-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-us-form.contact-us-form',
       'oneToOne',
       'admin::user'
     > &
@@ -1130,6 +1336,37 @@ export interface ApiDigitalWorldDigitalWorld extends Schema.CollectionType {
   };
 }
 
+export interface ApiDirectiveDirective extends Schema.CollectionType {
+  collectionName: 'directives';
+  info: {
+    singularName: 'directive';
+    pluralName: 'directives';
+    displayName: 'Directive';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Body: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::directive.directive',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::directive.directive',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDnaDna extends Schema.CollectionType {
   collectionName: 'dnas';
   info: {
@@ -1161,14 +1398,15 @@ export interface ApiEnquiryEnquiry extends Schema.CollectionType {
     singularName: 'enquiry';
     pluralName: 'enquiries';
     displayName: 'Enquiry';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    URLBusinessName: Attribute.String;
+    Business: Attribute.String;
     Name: Attribute.String;
-    Email: Attribute.String;
+    Email: Attribute.Email;
     Phone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1316,6 +1554,38 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeaderContactHeaderContact extends Schema.CollectionType {
+  collectionName: 'header_contacts';
+  info: {
+    singularName: 'header-contact';
+    pluralName: 'header-contacts';
+    displayName: 'HeaderContact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header-contact.header-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header-contact.header-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeaderOtherHeaderOther extends Schema.CollectionType {
   collectionName: 'header_others';
   info: {
@@ -1385,6 +1655,68 @@ export interface ApiHeaderServiceHeaderService extends Schema.CollectionType {
   };
 }
 
+export interface ApiMapMap extends Schema.CollectionType {
+  collectionName: 'maps';
+  info: {
+    singularName: 'map';
+    pluralName: 'maps';
+    displayName: 'Map';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Body: Attribute.String;
+    Phone: Attribute.String;
+    Email: Attribute.String;
+    SocialLinks: Attribute.Component<'body.body', true>;
+    Icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavbarNavbar extends Schema.CollectionType {
+  collectionName: 'navbars';
+  info: {
+    singularName: 'navbar';
+    pluralName: 'navbars';
+    displayName: 'Navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Pages: Attribute.Component<'link.link', true>;
+    Title: Attribute.String;
+    Fields: Attribute.Component<'body.body', true>;
+    Message: Attribute.Text;
+    Button: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navbar.navbar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOurServiceOurService extends Schema.CollectionType {
   collectionName: 'our_services';
   info: {
@@ -1445,6 +1777,38 @@ export interface ApiQneQne extends Schema.CollectionType {
   };
 }
 
+export interface ApiSeoServiceSeoService extends Schema.CollectionType {
+  collectionName: 'seo_services';
+  info: {
+    singularName: 'seo-service';
+    pluralName: 'seo-services';
+    displayName: 'SeoService';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    SeoCards: Attribute.Component<'cards.seo', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-service.seo-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-service.seo-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceDetailServiceDetail extends Schema.CollectionType {
   collectionName: 'service_details';
   info: {
@@ -1478,6 +1842,81 @@ export interface ApiServiceDetailServiceDetail extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceTechnologyLeftServiceTechnologyLeft
+  extends Schema.CollectionType {
+  collectionName: 'service_technology_lefts';
+  info: {
+    singularName: 'service-technology-left';
+    pluralName: 'service-technology-lefts';
+    displayName: 'ServiceTechnologyLeft';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-technology-left.service-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-technology-left.service-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceTechnologyRightServiceTechnologyRight
+  extends Schema.CollectionType {
+  collectionName: 'service_technology_rights';
+  info: {
+    singularName: 'service-technology-right';
+    pluralName: 'service-technology-rights';
+    displayName: 'ServiceTechnologyRight';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-technology-right.service-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::service-technology-right.service-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1499,23 +1938,36 @@ declare module '@strapi/types' {
       'plugin::ezforms.submission': PluginEzformsSubmission;
       'plugin::ezforms.recipient': PluginEzformsRecipient;
       'api::about-us-detail.about-us-detail': ApiAboutUsDetailAboutUsDetail;
+      'api::blog.blog': ApiBlogBlog;
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::consultation.consultation': ApiConsultationConsultation;
+      'api::consultation-contact.consultation-contact': ApiConsultationContactConsultationContact;
       'api::contact-form.contact-form': ApiContactFormContactForm;
+      'api::contact-form-category.contact-form-category': ApiContactFormCategoryContactFormCategory;
+      'api::contact-form-full.contact-form-full': ApiContactFormFullContactFormFull;
+      'api::contact-form-message.contact-form-message': ApiContactFormMessageContactFormMessage;
+      'api::contact-us-form.contact-us-form': ApiContactUsFormContactUsForm;
       'api::cta.cta': ApiCtaCta;
       'api::digital-world.digital-world': ApiDigitalWorldDigitalWorld;
+      'api::directive.directive': ApiDirectiveDirective;
       'api::dna.dna': ApiDnaDna;
       'api::enquiry.enquiry': ApiEnquiryEnquiry;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::guarantee.guarantee': ApiGuaranteeGuarantee;
       'api::header.header': ApiHeaderHeader;
+      'api::header-contact.header-contact': ApiHeaderContactHeaderContact;
       'api::header-other.header-other': ApiHeaderOtherHeaderOther;
       'api::header-service.header-service': ApiHeaderServiceHeaderService;
+      'api::map.map': ApiMapMap;
+      'api::navbar.navbar': ApiNavbarNavbar;
       'api::our-service.our-service': ApiOurServiceOurService;
       'api::qne.qne': ApiQneQne;
+      'api::seo-service.seo-service': ApiSeoServiceSeoService;
       'api::service-detail.service-detail': ApiServiceDetailServiceDetail;
+      'api::service-technology-left.service-technology-left': ApiServiceTechnologyLeftServiceTechnologyLeft;
+      'api::service-technology-right.service-technology-right': ApiServiceTechnologyRightServiceTechnologyRight;
     }
   }
 }

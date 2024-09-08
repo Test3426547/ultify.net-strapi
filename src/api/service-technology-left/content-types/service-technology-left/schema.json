@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_technology_lefts",
+  "info": {
+    "singularName": "service-technology-left",
+    "pluralName": "service-technology-lefts",
+    "displayName": "ServiceTechnologyLeft"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Options": {
+      "displayName": "Options",
+      "type": "component",
+      "repeatable": true,
+      "component": "fields.options"
+    }
+  }
+}

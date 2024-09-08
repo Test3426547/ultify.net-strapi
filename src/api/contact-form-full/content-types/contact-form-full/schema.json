@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "enquiries",
+  "collectionName": "contact_form_fulls",
   "info": {
-    "singularName": "enquiry",
-    "pluralName": "enquiries",
-    "displayName": "Enquiry",
-    "description": ""
+    "singularName": "contact-form-full",
+    "pluralName": "contact-form-fulls",
+    "displayName": "Contact Form Full"
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +22,12 @@
     },
     "Phone": {
       "type": "string"
+    },
+    "Category": {
+      "type": "string"
+    },
+    "Message": {
+      "type": "text"
     }
   }
 }

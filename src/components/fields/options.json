@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_fields_options",
+  "info": {
+    "displayName": "Options"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Points": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.body"
+    }
+  }
+}

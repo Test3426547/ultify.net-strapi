@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consultation_contacts",
+  "info": {
+    "singularName": "consultation-contact",
+    "pluralName": "consultation-contacts",
+    "displayName": "ConsultationContact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Fields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.body"
+    },
+    "Text": {
+      "type": "string"
+    },
+    "ServiceSelection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.body"
+    },
+    "Button": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "text"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "SocialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "link.link"
+    }
+  }
+}

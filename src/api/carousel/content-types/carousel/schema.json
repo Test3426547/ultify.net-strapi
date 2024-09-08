@@ -23,6 +23,12 @@
     },
     "Text": {
       "type": "string"
+    },
+    "Description": {
+      "displayName": "Title",
+      "type": "component",
+      "repeatable": true,
+      "component": "body.title"
     }
   }
 }

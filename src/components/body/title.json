@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_body_titles",
+  "info": {
+    "displayName": "Title"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    }
+  }
+}

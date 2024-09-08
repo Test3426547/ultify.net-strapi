@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directives",
+  "info": {
+    "singularName": "directive",
+    "pluralName": "directives",
+    "displayName": "Directive"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    }
+  }
+}
