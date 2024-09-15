@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_technology_lefts",
+  "info": {
+    "singularName": "website-technology-left",
+    "pluralName": "website-technology-lefts",
+    "displayName": "WebsiteTechnologyLeft"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "fields.options"
+    }
+  }
+}

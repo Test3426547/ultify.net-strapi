@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "print_advertising_headers",
+  "info": {
+    "singularName": "print-advertising-header",
+    "pluralName": "print-advertising-headers",
+    "displayName": "PrintAdvertisingHeader"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pill.pill"
+    }
+  }
+}

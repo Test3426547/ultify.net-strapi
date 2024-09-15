@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_details",
+  "info": {
+    "singularName": "website-detail",
+    "pluralName": "website-details",
+    "displayName": "WebsiteDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "WebsiteDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-details.service-details"
+    }
+  }
+}

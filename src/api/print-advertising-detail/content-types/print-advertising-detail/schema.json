@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "print_advertising_details",
+  "info": {
+    "singularName": "print-advertising-detail",
+    "pluralName": "print-advertising-details",
+    "displayName": "PrintAdvertisingDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PrintAdvertisingDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-details.service-details"
+    }
+  }
+}

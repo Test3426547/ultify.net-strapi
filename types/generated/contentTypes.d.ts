@@ -1279,6 +1279,75 @@ export interface ApiContactUsFormContactUsForm extends Schema.CollectionType {
   };
 }
 
+export interface ApiContentCreationDetailContentCreationDetail
+  extends Schema.CollectionType {
+  collectionName: 'content_creation_details';
+  info: {
+    singularName: 'content-creation-detail';
+    pluralName: 'content-creation-details';
+    displayName: 'ContentCreationDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ContentCreationDetails: Attribute.Component<
+      'service-details.service-details',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::content-creation-detail.content-creation-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::content-creation-detail.content-creation-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContentCreationHeaderContentCreationHeader
+  extends Schema.CollectionType {
+  collectionName: 'content_creation_headers';
+  info: {
+    singularName: 'content-creation-header';
+    pluralName: 'content-creation-headers';
+    displayName: 'ContentCreationHeader';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Text: Attribute.Component<'pill.pill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::content-creation-header.content-creation-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::content-creation-header.content-creation-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCtaCta extends Schema.CollectionType {
   collectionName: 'ctas';
   info: {
@@ -1754,6 +1823,218 @@ export interface ApiOurServiceOurService extends Schema.CollectionType {
   };
 }
 
+export interface ApiPaidMediaDetailPaidMediaDetail
+  extends Schema.CollectionType {
+  collectionName: 'paid_media_details';
+  info: {
+    singularName: 'paid-media-detail';
+    pluralName: 'paid-media-details';
+    displayName: 'PaidMediaDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    PaidMediaDetails: Attribute.Component<
+      'service-details.service-details',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::paid-media-detail.paid-media-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::paid-media-detail.paid-media-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPaidMediaHeaderPaidMediaHeader
+  extends Schema.CollectionType {
+  collectionName: 'paid_media_headers';
+  info: {
+    singularName: 'paid-media-header';
+    pluralName: 'paid-media-headers';
+    displayName: 'PaidMediaHeader';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Text: Attribute.Component<'pill.pill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::paid-media-header.paid-media-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::paid-media-header.paid-media-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPaidMediaTechnologyLeftPaidMediaTechnologyLeft
+  extends Schema.CollectionType {
+  collectionName: 'paid_media_technology_lefts';
+  info: {
+    singularName: 'paid-media-technology-left';
+    pluralName: 'paid-media-technology-lefts';
+    displayName: 'PaidMediaTechnologyLeft';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::paid-media-technology-left.paid-media-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::paid-media-technology-left.paid-media-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPaidMediaTechnologyRightPaidMediaTechnologyRight
+  extends Schema.CollectionType {
+  collectionName: 'paid_media_technology_rights';
+  info: {
+    singularName: 'paid-media-technology-right';
+    pluralName: 'paid-media-technology-rights';
+    displayName: 'PaidMediaTechnologyRight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::paid-media-technology-right.paid-media-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::paid-media-technology-right.paid-media-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrintAdvertisingDetailPrintAdvertisingDetail
+  extends Schema.CollectionType {
+  collectionName: 'print_advertising_details';
+  info: {
+    singularName: 'print-advertising-detail';
+    pluralName: 'print-advertising-details';
+    displayName: 'PrintAdvertisingDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    PrintAdvertisingDetails: Attribute.Component<
+      'service-details.service-details',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::print-advertising-detail.print-advertising-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::print-advertising-detail.print-advertising-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrintAdvertisingHeaderPrintAdvertisingHeader
+  extends Schema.CollectionType {
+  collectionName: 'print_advertising_headers';
+  info: {
+    singularName: 'print-advertising-header';
+    pluralName: 'print-advertising-headers';
+    displayName: 'PrintAdvertisingHeader';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Text: Attribute.Component<'pill.pill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::print-advertising-header.print-advertising-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::print-advertising-header.print-advertising-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiQneQne extends Schema.CollectionType {
   collectionName: 'qnes';
   info: {
@@ -1777,6 +2058,70 @@ export interface ApiQneQne extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::qne.qne', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::qne.qne', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeoDetailSeoDetail extends Schema.CollectionType {
+  collectionName: 'seo_details';
+  info: {
+    singularName: 'seo-detail';
+    pluralName: 'seo-details';
+    displayName: 'SeoDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SeoDetails: Attribute.Component<'service-details.service-details', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-detail.seo-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-detail.seo-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeoHeaderSeoHeader extends Schema.CollectionType {
+  collectionName: 'seo_headers';
+  info: {
+    singularName: 'seo-header';
+    pluralName: 'seo-headers';
+    displayName: 'SeoHeader';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Text: Attribute.Component<'pill.pill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-header.seo-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-header.seo-header',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1806,6 +2151,80 @@ export interface ApiSeoServiceSeoService extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::seo-service.seo-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeoTechnologyLeftSeoTechnologyLeft
+  extends Schema.CollectionType {
+  collectionName: 'seo_technology_lefts';
+  info: {
+    singularName: 'seo-technology-left';
+    pluralName: 'seo-technology-lefts';
+    displayName: 'SeoTechnologyLeft';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-technology-left.seo-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-technology-left.seo-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSeoTechnologyRightSeoTechnologyRight
+  extends Schema.CollectionType {
+  collectionName: 'seo_technology_rights';
+  info: {
+    singularName: 'seo-technology-right';
+    pluralName: 'seo-technology-rights';
+    displayName: 'SeoTechnologyRight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::seo-technology-right.seo-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::seo-technology-right.seo-technology-right',
       'oneToOne',
       'admin::user'
     > &
@@ -1921,6 +2340,216 @@ export interface ApiServiceTechnologyRightServiceTechnologyRight
   };
 }
 
+export interface ApiSocialMediaDetailSocialMediaDetail
+  extends Schema.CollectionType {
+  collectionName: 'social_media_details';
+  info: {
+    singularName: 'social-media-detail';
+    pluralName: 'social-media-details';
+    displayName: 'SocialMediaDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SocialMediaDetails: Attribute.Component<
+      'service-details.service-details',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-media-detail.social-media-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-media-detail.social-media-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialMediaHeaderSocialMediaHeader
+  extends Schema.CollectionType {
+  collectionName: 'social_media_headers';
+  info: {
+    singularName: 'social-media-header';
+    pluralName: 'social-media-headers';
+    displayName: 'SocialMediaHeader';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Text: Attribute.Component<'pill.pill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-media-header.social-media-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-media-header.social-media-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteDetailWebsiteDetail extends Schema.CollectionType {
+  collectionName: 'website_details';
+  info: {
+    singularName: 'website-detail';
+    pluralName: 'website-details';
+    displayName: 'WebsiteDetail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    WebsiteDetails: Attribute.Component<
+      'service-details.service-details',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website-detail.website-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website-detail.website-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteHeaderWebsiteHeader extends Schema.CollectionType {
+  collectionName: 'website_headers';
+  info: {
+    singularName: 'website-header';
+    pluralName: 'website-headers';
+    displayName: 'WebsiteHeader';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Heading: Attribute.String;
+    Subheading: Attribute.String;
+    Text: Attribute.Component<'pill.pill', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website-header.website-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website-header.website-header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteTechnologyLeftWebsiteTechnologyLeft
+  extends Schema.CollectionType {
+  collectionName: 'website_technology_lefts';
+  info: {
+    singularName: 'website-technology-left';
+    pluralName: 'website-technology-lefts';
+    displayName: 'WebsiteTechnologyLeft';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website-technology-left.website-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website-technology-left.website-technology-left',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWebsiteTechnologyRightWebsiteTechnologyRight
+  extends Schema.CollectionType {
+  collectionName: 'website_technology_rights';
+  info: {
+    singularName: 'website-technology-right';
+    pluralName: 'website-technology-rights';
+    displayName: 'WebsiteTechnologyRight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Heading: Attribute.String;
+    Body: Attribute.Text;
+    Subheading: Attribute.String;
+    Title: Attribute.String;
+    Subtitle: Attribute.String;
+    Options: Attribute.Component<'fields.options', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::website-technology-right.website-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::website-technology-right.website-technology-right',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1952,6 +2581,8 @@ declare module '@strapi/types' {
       'api::contact-form-full.contact-form-full': ApiContactFormFullContactFormFull;
       'api::contact-form-message.contact-form-message': ApiContactFormMessageContactFormMessage;
       'api::contact-us-form.contact-us-form': ApiContactUsFormContactUsForm;
+      'api::content-creation-detail.content-creation-detail': ApiContentCreationDetailContentCreationDetail;
+      'api::content-creation-header.content-creation-header': ApiContentCreationHeaderContentCreationHeader;
       'api::cta.cta': ApiCtaCta;
       'api::digital-world.digital-world': ApiDigitalWorldDigitalWorld;
       'api::directive.directive': ApiDirectiveDirective;
@@ -1967,11 +2598,27 @@ declare module '@strapi/types' {
       'api::map.map': ApiMapMap;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::our-service.our-service': ApiOurServiceOurService;
+      'api::paid-media-detail.paid-media-detail': ApiPaidMediaDetailPaidMediaDetail;
+      'api::paid-media-header.paid-media-header': ApiPaidMediaHeaderPaidMediaHeader;
+      'api::paid-media-technology-left.paid-media-technology-left': ApiPaidMediaTechnologyLeftPaidMediaTechnologyLeft;
+      'api::paid-media-technology-right.paid-media-technology-right': ApiPaidMediaTechnologyRightPaidMediaTechnologyRight;
+      'api::print-advertising-detail.print-advertising-detail': ApiPrintAdvertisingDetailPrintAdvertisingDetail;
+      'api::print-advertising-header.print-advertising-header': ApiPrintAdvertisingHeaderPrintAdvertisingHeader;
       'api::qne.qne': ApiQneQne;
+      'api::seo-detail.seo-detail': ApiSeoDetailSeoDetail;
+      'api::seo-header.seo-header': ApiSeoHeaderSeoHeader;
       'api::seo-service.seo-service': ApiSeoServiceSeoService;
+      'api::seo-technology-left.seo-technology-left': ApiSeoTechnologyLeftSeoTechnologyLeft;
+      'api::seo-technology-right.seo-technology-right': ApiSeoTechnologyRightSeoTechnologyRight;
       'api::service-detail.service-detail': ApiServiceDetailServiceDetail;
       'api::service-technology-left.service-technology-left': ApiServiceTechnologyLeftServiceTechnologyLeft;
       'api::service-technology-right.service-technology-right': ApiServiceTechnologyRightServiceTechnologyRight;
+      'api::social-media-detail.social-media-detail': ApiSocialMediaDetailSocialMediaDetail;
+      'api::social-media-header.social-media-header': ApiSocialMediaHeaderSocialMediaHeader;
+      'api::website-detail.website-detail': ApiWebsiteDetailWebsiteDetail;
+      'api::website-header.website-header': ApiWebsiteHeaderWebsiteHeader;
+      'api::website-technology-left.website-technology-left': ApiWebsiteTechnologyLeftWebsiteTechnologyLeft;
+      'api::website-technology-right.website-technology-right': ApiWebsiteTechnologyRightWebsiteTechnologyRight;
     }
   }
 }

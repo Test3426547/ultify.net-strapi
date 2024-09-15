@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content_creation_headers",
+  "info": {
+    "singularName": "content-creation-header",
+    "pluralName": "content-creation-headers",
+    "displayName": "ContentCreationHeader"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pill.pill"
+    }
+  }
+}

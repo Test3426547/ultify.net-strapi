@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content_creation_details",
+  "info": {
+    "singularName": "content-creation-detail",
+    "pluralName": "content-creation-details",
+    "displayName": "ContentCreationDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ContentCreationDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-details.service-details"
+    }
+  }
+}

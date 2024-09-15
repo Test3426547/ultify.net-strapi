@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_media_details",
+  "info": {
+    "singularName": "social-media-detail",
+    "pluralName": "social-media-details",
+    "displayName": "SocialMediaDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SocialMediaDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-details.service-details"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paid_media_technology_lefts",
+  "info": {
+    "singularName": "paid-media-technology-left",
+    "pluralName": "paid-media-technology-lefts",
+    "displayName": "PaidMediaTechnologyLeft"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "fields.options"
+    }
+  }
+}

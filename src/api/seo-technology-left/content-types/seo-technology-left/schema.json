@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seo_technology_lefts",
+  "info": {
+    "singularName": "seo-technology-left",
+    "pluralName": "seo-technology-lefts",
+    "displayName": "SeoTechnologyLeft"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "text"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "fields.options"
+    }
+  }
+}

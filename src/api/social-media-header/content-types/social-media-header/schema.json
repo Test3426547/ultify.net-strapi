@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_media_headers",
+  "info": {
+    "singularName": "social-media-header",
+    "pluralName": "social-media-headers",
+    "displayName": "SocialMediaHeader"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pill.pill"
+    }
+  }
+}

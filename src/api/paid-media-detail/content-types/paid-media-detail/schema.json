@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paid_media_details",
+  "info": {
+    "singularName": "paid-media-detail",
+    "pluralName": "paid-media-details",
+    "displayName": "PaidMediaDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PaidMediaDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service-details.service-details"
+    }
+  }
+}

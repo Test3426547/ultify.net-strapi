@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_headers",
+  "info": {
+    "singularName": "website-header",
+    "pluralName": "website-headers",
+    "displayName": "WebsiteHeader"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pill.pill"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seo_headers",
+  "info": {
+    "singularName": "seo-header",
+    "pluralName": "seo-headers",
+    "displayName": "SeoHeader"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Subheading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pill.pill"
+    }
+  }
+}
