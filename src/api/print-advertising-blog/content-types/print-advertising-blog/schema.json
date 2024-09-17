@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "print_advertising_blogs",
+  "info": {
+    "singularName": "print-advertising-blog",
+    "pluralName": "print-advertising-blogs",
+    "displayName": "PrintAdvertisingBlog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.cards"
+    }
+  }
+}

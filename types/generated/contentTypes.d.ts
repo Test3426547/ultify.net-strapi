@@ -1279,6 +1279,38 @@ export interface ApiContactUsFormContactUsForm extends Schema.CollectionType {
   };
 }
 
+export interface ApiContentCreationBlogContentCreationBlog
+  extends Schema.CollectionType {
+  collectionName: 'content_creation_blogs';
+  info: {
+    singularName: 'content-creation-blog';
+    pluralName: 'content-creation-blogs';
+    displayName: 'ContentCreationBlog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Cards: Attribute.Component<'cards.blog', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::content-creation-blog.content-creation-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::content-creation-blog.content-creation-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContentCreationDetailContentCreationDetail
   extends Schema.CollectionType {
   collectionName: 'content_creation_details';
@@ -1966,6 +1998,38 @@ export interface ApiPaidMediaTechnologyRightPaidMediaTechnologyRight
   };
 }
 
+export interface ApiPrintAdvertisingBlogPrintAdvertisingBlog
+  extends Schema.CollectionType {
+  collectionName: 'print_advertising_blogs';
+  info: {
+    singularName: 'print-advertising-blog';
+    pluralName: 'print-advertising-blogs';
+    displayName: 'PrintAdvertisingBlog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Cards: Attribute.Component<'blog.cards', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::print-advertising-blog.print-advertising-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::print-advertising-blog.print-advertising-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrintAdvertisingDetailPrintAdvertisingDetail
   extends Schema.CollectionType {
   collectionName: 'print_advertising_details';
@@ -2340,6 +2404,38 @@ export interface ApiServiceTechnologyRightServiceTechnologyRight
   };
 }
 
+export interface ApiSocialMediaBlogSocialMediaBlog
+  extends Schema.CollectionType {
+  collectionName: 'social_media_blogs';
+  info: {
+    singularName: 'social-media-blog';
+    pluralName: 'social-media-blogs';
+    displayName: 'SocialMediaBlog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Cards: Attribute.Component<'blog.cards', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-media-blog.social-media-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-media-blog.social-media-blog',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSocialMediaDetailSocialMediaDetail
   extends Schema.CollectionType {
   collectionName: 'social_media_details';
@@ -2581,6 +2677,7 @@ declare module '@strapi/types' {
       'api::contact-form-full.contact-form-full': ApiContactFormFullContactFormFull;
       'api::contact-form-message.contact-form-message': ApiContactFormMessageContactFormMessage;
       'api::contact-us-form.contact-us-form': ApiContactUsFormContactUsForm;
+      'api::content-creation-blog.content-creation-blog': ApiContentCreationBlogContentCreationBlog;
       'api::content-creation-detail.content-creation-detail': ApiContentCreationDetailContentCreationDetail;
       'api::content-creation-header.content-creation-header': ApiContentCreationHeaderContentCreationHeader;
       'api::cta.cta': ApiCtaCta;
@@ -2602,6 +2699,7 @@ declare module '@strapi/types' {
       'api::paid-media-header.paid-media-header': ApiPaidMediaHeaderPaidMediaHeader;
       'api::paid-media-technology-left.paid-media-technology-left': ApiPaidMediaTechnologyLeftPaidMediaTechnologyLeft;
       'api::paid-media-technology-right.paid-media-technology-right': ApiPaidMediaTechnologyRightPaidMediaTechnologyRight;
+      'api::print-advertising-blog.print-advertising-blog': ApiPrintAdvertisingBlogPrintAdvertisingBlog;
       'api::print-advertising-detail.print-advertising-detail': ApiPrintAdvertisingDetailPrintAdvertisingDetail;
       'api::print-advertising-header.print-advertising-header': ApiPrintAdvertisingHeaderPrintAdvertisingHeader;
       'api::qne.qne': ApiQneQne;
@@ -2613,6 +2711,7 @@ declare module '@strapi/types' {
       'api::service-detail.service-detail': ApiServiceDetailServiceDetail;
       'api::service-technology-left.service-technology-left': ApiServiceTechnologyLeftServiceTechnologyLeft;
       'api::service-technology-right.service-technology-right': ApiServiceTechnologyRightServiceTechnologyRight;
+      'api::social-media-blog.social-media-blog': ApiSocialMediaBlogSocialMediaBlog;
       'api::social-media-detail.social-media-detail': ApiSocialMediaDetailSocialMediaDetail;
       'api::social-media-header.social-media-header': ApiSocialMediaHeaderSocialMediaHeader;
       'api::website-detail.website-detail': ApiWebsiteDetailWebsiteDetail;

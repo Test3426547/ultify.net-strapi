@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_media_blogs",
+  "info": {
+    "singularName": "social-media-blog",
+    "pluralName": "social-media-blogs",
+    "displayName": "SocialMediaBlog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Cards": {
+      "displayName": "Cards",
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.cards"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content_creation_blogs",
+  "info": {
+    "singularName": "content-creation-blog",
+    "pluralName": "content-creation-blogs",
+    "displayName": "ContentCreationBlog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cards.blog"
+    }
+  }
+}
